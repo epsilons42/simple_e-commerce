@@ -3,7 +3,7 @@ package com.example.alsess.service
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
-import com.example.alsess.view.MainActivity
+import com.example.alsess.view.activity.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 

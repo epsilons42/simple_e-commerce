@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/productDetailFragment"
-        android:name="com.example.alsess.view.ProductDetailFragment"
+        android:name="com.example.alsess.view.fragment.ProductDetailFragment"
         android:label="fragment_product_detail"
         tools:layout="@layout/fragment_product_detail">
         <argument
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/productCategoryFragment"
-        android:name="com.example.alsess.view.ProductCategoryFragment"
+        android:name="com.example.alsess.view.fragment.ProductCategoryFragment"
         android:label="fragment_product_category"
         tools:layout="@layout/fragment_product_category">
         <argument
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/productChildFragment"
-        android:name="com.example.alsess.view.ProductChildFragment"
+        android:name="com.example.alsess.view.fragment.ProductChildFragment"
         android:label="fragment_product_child"
         tools:layout="@layout/fragment_product_child" >
         <action
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/productSearchFragment"
-        android:name="com.example.alsess.view.ProductSearchFragment"
+        android:name="com.example.alsess.view.fragment.ProductSearchFragment"
         android:label="fragment_product_search"
         tools:layout="@layout/fragment_product_search" >
         <action
@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.alsess.view.SearchFragment"
+        android:name="com.example.alsess.view.fragment.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search">
         <action

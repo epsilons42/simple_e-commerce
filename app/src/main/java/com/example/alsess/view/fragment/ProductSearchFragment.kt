@@ -1,4 +1,4 @@
-package com.example.alsess.view
+package com.example.alsess.view.fragment
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -15,45 +15,53 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.alsess.R
-import com.example.alsess.adapters.ProductCategoryAdapter
-import com.example.alsess.databinding.FragmentProductCategoryBinding
+import com.example.alsess.adapters.ProductSearchAdapter
+import com.example.alsess.databinding.FragmentProductSearchBinding
 import com.example.alsess.model.ApiProductsModel
-import com.example.alsess.viewmodel.ProductCategoryViewModel
+import com.example.alsess.view.fragment.ProductSearchFragmentArgs
+import com.example.alsess.viewmodel.ProductSearchViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import java.util.Collections
+import java.util.*
+import kotlin.collections.ArrayList
 
-class ProductCategoryFragment : Fragment() {
-    private lateinit var viewBinding: FragmentProductCategoryBinding
-    private lateinit var productCategoryViewModel: ProductCategoryViewModel
+
+class ProductSearchFragment : Fragment() {
+    private lateinit var viewBinding: FragmentProductSearchBinding
     val productArrayList = ArrayList<ApiProductsModel>()
-    val bundle: ProductCategoryFragmentArgs by navArgs()
-
+    val bundle: ProductSearchFragmentArgs by navArgs()
+    private lateinit var productSearchViewModel: ProductSearchViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewBinding = FragmentProductCategoryBinding.inflate(inflater, container, false)
-
-        productCategoryViewModel = ViewModelProvider(this).get(ProductCategoryViewModel :: class.java)
-        productCategoryViewModel .productLoadData(bundle.category)
+        viewBinding = FragmentProductSearchBinding.inflate(inflater, container, false)
+        productSearchViewModel = ViewModelProvider(this).get(ProductSearchViewModel::class.java)
+        productSearchViewModel.productLoadData(bundle.category)
 
         viewModelObserve()
 
         recyclerViewActions()
-
-
-        viewBinding.fragmentProductCategoryAllToolbar.setNavigationOnClickListener {
+        viewBinding.fragmentProductSearchToolbar.setNavigationOnClickListener {
             Navigation.findNavController(it).popBackStack()
         }
 
-        viewBinding.fragmentProductCategoryAllBtnSort.setOnClickListener {
+        viewBinding.fragmentProductSearchTxv.setOnClickListener {
+            Navigation.findNavController(it).popBackStack()
+        }
+
+        viewBinding.fragmentProductSearchTxv.text = bundle.category
+
+        viewBinding.fragmentProductSearchBtnSort.setOnClickListener {
             bottomSheetDialogAction()
         }
+
+
         return viewBinding.root
     }
+
     fun viewModelObserve() {
         if (productArrayList.size == 0) {
-            productCategoryViewModel.productMLD.observe(
+            productSearchViewModel.productMLD.observe(
                 viewLifecycleOwner,
                 androidx.lifecycle.Observer { product ->
                     product?.let {
@@ -64,36 +72,36 @@ class ProductCategoryFragment : Fragment() {
         }
 
 
-        productCategoryViewModel.productLoadMLD.observe(
+        productSearchViewModel.productLoadMLD.observe(
             viewLifecycleOwner,
             androidx.lifecycle.Observer { productLoad ->
                 productLoad?.let {
                     if (it) {
-                        viewBinding.fragmentProductCategoryAllBtnSort.visibility = View.VISIBLE
-                        viewBinding.fragmentProductCategoryAllPgb.visibility = View.GONE
+                        viewBinding.fragmentProductSearchBtnSort.visibility = View.VISIBLE
+                        viewBinding.fragmentProductSearchPgb.visibility = View.GONE
 
                     } else {
-                        viewBinding.fragmentProductCategoryAllPgb.visibility = View.VISIBLE
+                        viewBinding.fragmentProductSearchPgb.visibility = View.VISIBLE
                     }
                 }
             })
     }
 
 
-
-    @SuppressLint("CommitPrefEdits", "NotifyDataSetChanged")
+    @SuppressLint("InflateParams")
     fun bottomSheetDialogAction() {
-        val bottomSheetDialog = BottomSheetDialog(requireContext())
+        val bottomSheetDialog = context?.let { BottomSheetDialog(it) }
         val bottomSheetView = layoutInflater.inflate(R.layout.fragment_category_bottom_sheet, null)
         val sharedPreferences =
-            requireContext().getSharedPreferences("radioButtonClick", Context.MODE_PRIVATE)
-        val sharedPreferencesEditor = sharedPreferences.edit()
+            context?.getSharedPreferences("radioButtonClick", Context.MODE_PRIVATE)
+        val sharedPreferencesEditor = sharedPreferences?.edit()
 
-        val imbCancel = bottomSheetView.findViewById(R.id.fragmentCategoryBottomSheetImbCancel) as ImageButton
+        val imbCancel =
+            bottomSheetView.findViewById(R.id.fragmentCategoryBottomSheetImbCancel) as ImageButton
 
         val radioGroup =
             bottomSheetView.findViewById(R.id.fragmentCategoryBottomSheetRg) as RadioGroup
-        bottomSheetDialog.setContentView(bottomSheetView)
+        bottomSheetDialog?.setContentView(bottomSheetView)
 
         val radioButton1 =
             bottomSheetView.findViewById(R.id.fragmentCategoryBottomSheetRbDefaultSorting) as RadioButton
@@ -107,7 +115,7 @@ class ProductCategoryFragment : Fragment() {
             bottomSheetView.findViewById(R.id.fragmentCategoryBottomSheetRbHighestRated) as RadioButton
 
         //Radio button remembers the saved click id
-        when (sharedPreferences.getInt("rbClickId", 0)) {
+        when (sharedPreferences?.getInt("rbClickId", 0)) {
             1 -> radioButton1.isChecked = true
             2 -> radioButton2.isChecked = true
             3 -> radioButton3.isChecked = true
@@ -115,63 +123,61 @@ class ProductCategoryFragment : Fragment() {
             5 -> radioButton5.isChecked = true
         }
 
-        //Select the category via Radio Button and save the click id in sharedpreferences
-        radioGroup.setOnCheckedChangeListener { group, checkedId ->
+        //Select the category via Radio Button and save the click id in sharedPreferences
+        radioGroup.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
                 R.id.fragmentCategoryBottomSheetRbDefaultSorting -> {
-                    sharedPreferencesEditor.putInt("rbClickId", 1)
-                    sharedPreferencesEditor.apply()
+                    sharedPreferencesEditor?.putInt("rbClickId", 1)
+                    sharedPreferencesEditor?.apply()
                     if (productArrayList.size != 0) {
                         recyclerViewActions()
-                        productArrayList.clear()
-                        viewModelObserve()
-                        bottomSheetDialog.dismiss()
+                        bottomSheetDialog?.dismiss()
                     }
                 }
                 R.id.fragmentCategoryBottomSheetRbLowestPrice -> {
-                    sharedPreferencesEditor.putInt("rbClickId", 2)
-                    sharedPreferencesEditor.apply()
+                    sharedPreferencesEditor?.putInt("rbClickId", 2)
+                    sharedPreferencesEditor?.apply()
                     if (productArrayList.size != 0) {
                         recyclerViewActions()
                         productArrayList.sortBy {
                             it.price
                         }
-                        bottomSheetDialog.dismiss()
+                        bottomSheetDialog?.dismiss()
                     }
                 }
                 R.id.fragmentCategoryBottomSheetRbHighestPrice -> {
-                    sharedPreferencesEditor.putInt("rbClickId", 3)
-                    sharedPreferencesEditor.apply()
+                    sharedPreferencesEditor?.putInt("rbClickId", 3)
+                    sharedPreferencesEditor?.apply()
                     if (productArrayList.size != 0) {
                         recyclerViewActions()
                         productArrayList.sortBy {
                             it.price
                         }
-                        Collections.reverse(productArrayList)
-                        bottomSheetDialog.dismiss()
+                        productArrayList.reverse()
+                        bottomSheetDialog?.dismiss()
                     }
                 }
                 R.id.fragmentCategoryBottomSheetRbLowestRated -> {
-                    sharedPreferencesEditor.putInt("rbClickId", 4)
-                    sharedPreferencesEditor.apply()
+                    sharedPreferencesEditor?.putInt("rbClickId", 4)
+                    sharedPreferencesEditor?.apply()
                     if (productArrayList.size != 0) {
                         recyclerViewActions()
                         productArrayList.sortBy {
                             it.rating.rate
                         }
-                        bottomSheetDialog.dismiss()
+                        bottomSheetDialog?.dismiss()
                     }
                 }
                 R.id.fragmentCategoryBottomSheetRbHighestRated -> {
-                    sharedPreferencesEditor.putInt("rbClickId", 5)
-                    sharedPreferencesEditor.apply()
+                    sharedPreferencesEditor?.putInt("rbClickId", 5)
+                    sharedPreferencesEditor?.apply()
                     if (productArrayList.size != 0) {
                         recyclerViewActions()
                         productArrayList.sortBy {
                             it.rating.rate
                         }
-                        Collections.reverse(productArrayList)
-                        bottomSheetDialog.dismiss()
+                        productArrayList.reverse()
+                        bottomSheetDialog?.dismiss()
                     }
 
                 }
@@ -179,23 +185,23 @@ class ProductCategoryFragment : Fragment() {
         }
 
         imbCancel.setOnClickListener {
-            bottomSheetDialog.dismiss()
+            bottomSheetDialog?.dismiss()
         }
 
-        bottomSheetDialog.show()
+        bottomSheetDialog?.show()
 
     }
 
     fun recyclerViewActions() {
-        viewBinding.fragmentProductCategoryAllRecyclerView.adapter =
+        viewBinding.fragmentProductSearchRecyclerView.adapter =
             context?.let {
-                ProductCategoryAdapter(
+                ProductSearchAdapter(
                     it,
                     productArrayList
                 )
             }
-        viewBinding.fragmentProductCategoryAllRecyclerView.layoutManager =
+        viewBinding.fragmentProductSearchRecyclerView.layoutManager =
             GridLayoutManager(context, 2)
-        viewBinding.fragmentProductCategoryAllToolbar.title = bundle.categoryTitle
     }
+
 }

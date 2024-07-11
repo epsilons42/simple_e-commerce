@@ -1,4 +1,4 @@
-package com.example.alsess.view
+package com.example.alsess.view.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -33,10 +33,14 @@ class FavoritesFragment : Fragment() {
             viewBinding.fragmentFavoritesImvBasket.visibility = View.VISIBLE
         }
 
+        /*
         viewBinding.fragmentFavoritesBtnLogin.setOnClickListener {
             val intent = Intent(context, LoginActivity::class.java)
             startActivity(intent)
         }
+
+         */
+
 
         return viewBinding.root
     }

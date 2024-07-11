@@ -1,4 +1,4 @@
-package com.example.alsess.view
+package com.example.alsess.view.activity
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity

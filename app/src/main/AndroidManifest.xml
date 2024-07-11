@@ -14,13 +14,10 @@
         android:theme="@style/Theme.Alsess"
         tools:targetApi="31">
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".view.activity.LoginSignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".view.SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.SplashScreenActivity"
+            android:name=".view.activity.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/splashScreenTheme">
             <intent-filter>
@@ -29,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.activity.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan"/>
     </application>

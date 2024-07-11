@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/productParentFragment"
-        android:name="com.example.alsess.view.ProductParentFragment"
+        android:name="com.example.alsess.view.fragment.ProductParentFragment"
         android:label="fragment_products"
         tools:layout="@layout/fragment_product_parent" />
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.example.alsess.view.FavoritesFragment"
+        android:name="com.example.alsess.view.fragment.FavoritesFragment"
         android:label="fragment_favorites"
         tools:layout="@layout/fragment_favorites" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/basketFragment"
-        android:name="com.example.alsess.view.BasketFragment"
+        android:name="com.example.alsess.view.fragment.BasketFragment"
         android:label="fragment_basket"
         tools:layout="@layout/fragment_basket" >
         <action
@@ -30,12 +30,12 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.alsess.view.ProfileParentFragment"
+        android:name="com.example.alsess.view.fragment.ProfileParentFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile_parent" />
     <fragment
         android:id="@+id/productDetailFragment"
-        android:name="com.example.alsess.view.ProductDetailFragment"
+        android:name="com.example.alsess.view.fragment.ProductDetailFragment"
         android:label="fragment_product_detail"
         tools:layout="@layout/fragment_product_detail" >
         <argument

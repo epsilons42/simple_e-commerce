@@ -1,4 +1,4 @@
-package com.example.alsess.view
+package com.example.alsess.view.fragment
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -15,6 +15,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.alsess.R
 import com.example.alsess.databinding.FragmentProductDetailBinding
 import com.example.alsess.model.ApiProductsModel
+import com.example.alsess.view.fragment.ProductDetailFragmentArgs
 import com.example.alsess.viewmodel.ProductDetailViewModel
 import com.google.firebase.auth.FirebaseAuth
 
@@ -76,10 +77,13 @@ class ProductDetailFragment : Fragment() {
                 dataBinding.fragmentProductDetailTgbAddFavorites.isChecked = !control
             } else {
                 dataBinding.fragmentProductDetailTgbAddFavorites.setBackgroundResource(R.drawable.asset_favorites_white)
+                /*
                 dataBinding.fragmentProductDetailTgbAddFavorites.setOnClickListener {
                     val intent = Intent(context, LoginActivity::class.java)
                     startActivity(intent)
                 }
+
+                 */
             }
 
         })

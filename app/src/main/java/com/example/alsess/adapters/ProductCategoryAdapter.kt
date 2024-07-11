@@ -16,8 +16,7 @@ import com.example.alsess.service.BasketSQLiteDao
 import com.example.alsess.service.FavoritesSQLiteDao
 import com.example.alsess.service.BasketSQLiteDataHelper
 import com.example.alsess.service.FavoritesSQLiteDataHelper
-import com.example.alsess.view.LoginActivity
-import com.example.alsess.view.ProductCategoryFragmentDirections
+import com.example.alsess.view.fragment.ProductCategoryFragmentDirections
 import com.google.firebase.auth.FirebaseAuth
 
 class ProductCategoryAdapter(
@@ -58,10 +57,13 @@ class ProductCategoryAdapter(
             addDataFavorites(holder.dataBinding.rowProductCategoryAllTgbFavorites, position)
         } else {
             holder.dataBinding.rowProductCategoryAllTgbFavorites.setBackgroundResource(R.drawable.asset_favorites_white)
+            /*
             holder.dataBinding.rowProductCategoryAllTgbFavorites.setOnClickListener {
                 val intent = Intent(context, LoginActivity::class.java)
                 context.startActivity(intent)
             }
+
+             */
 
         }
 

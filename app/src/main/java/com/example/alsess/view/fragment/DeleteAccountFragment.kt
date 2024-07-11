@@ -1,4 +1,4 @@
-package com.example.alsess.view
+package com.example.alsess.view.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 import com.example.alsess.R
 import com.example.alsess.databinding.FragmentDeleteAccountBinding
+import com.example.alsess.view.activity.MainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth

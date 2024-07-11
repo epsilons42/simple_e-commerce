@@ -16,8 +16,7 @@ import com.example.alsess.service.BasketSQLiteDao
 import com.example.alsess.service.FavoritesSQLiteDao
 import com.example.alsess.service.BasketSQLiteDataHelper
 import com.example.alsess.service.FavoritesSQLiteDataHelper
-import com.example.alsess.view.LoginActivity
-import com.example.alsess.view.ProductSearchFragmentDirections
+import com.example.alsess.view.fragment.ProductSearchFragmentDirections
 import com.google.firebase.auth.FirebaseAuth
 
 class ProductSearchAdapter(
@@ -50,10 +49,13 @@ class ProductSearchAdapter(
             addDataFavorites(holder.dataBinding.rowProductSearchTgbFavorites, position)
         } else {
             holder.dataBinding.rowProductSearchTgbFavorites.setBackgroundResource(R.drawable.asset_favorites_white)
+           /*
             holder.dataBinding.rowProductSearchTgbFavorites.setOnClickListener {
                 val intent = Intent(context, LoginActivity::class.java)
                 context.startActivity(intent)
             }
+
+            */
 
         }
         addDataBasket(holder.dataBinding.rowProductSearchTgbAddBasket, position)

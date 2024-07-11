@@ -8,7 +8,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alsess.R
 import com.example.alsess.databinding.FragmentSearchRowBinding
-import com.example.alsess.view.SearchFragmentDirections
+import com.example.alsess.view.fragment.SearchFragmentDirections
 
 class SearchAdapter(var searchItemList: List<String>) :
     RecyclerView.Adapter<SearchAdapter.SearchVH>() {

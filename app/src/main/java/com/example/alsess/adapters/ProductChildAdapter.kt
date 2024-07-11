@@ -14,8 +14,7 @@ import com.example.alsess.databinding.FragmentProductChildRowBinding
 import com.example.alsess.model.ProductRVChildModel
 import com.example.alsess.service.FavoritesSQLiteDao
 import com.example.alsess.service.FavoritesSQLiteDataHelper
-import com.example.alsess.view.LoginActivity
-import com.example.alsess.view.ProductChildFragmentDirections
+import com.example.alsess.view.fragment.ProductChildFragmentDirections
 import com.google.firebase.auth.FirebaseAuth
 
 class ProductChildAdapter(val context: Context, val childList: List<ProductRVChildModel>) :
@@ -52,10 +51,13 @@ class ProductChildAdapter(val context: Context, val childList: List<ProductRVChi
             addDataFavorites(holder.dataBinding.rowProductChildTgbAddFavorites, position)
         } else {
             holder.dataBinding.rowProductChildTgbAddFavorites.setBackgroundResource(R.drawable.asset_favorites_white)
+           /*
             holder.dataBinding.rowProductChildTgbAddFavorites.setOnClickListener {
                 val intent = Intent(context, LoginActivity::class.java)
                 context.startActivity(intent)
             }
+
+            */
 
         }
 

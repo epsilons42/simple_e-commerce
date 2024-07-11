@@ -1,4 +1,4 @@
-package com.example.alsess.view
+package com.example.alsess.view.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alsess.adapters.SearchAdapter
 import com.example.alsess.databinding.FragmentSearchBinding
+import com.example.alsess.view.fragment.SearchFragmentDirections
 import com.example.alsess.viewmodel.SearchViewModel
 import java.util.*
 import kotlin.collections.ArrayList

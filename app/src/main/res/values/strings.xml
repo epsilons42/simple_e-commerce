@@ -29,6 +29,37 @@
     <string name="password_repeat">Retype Password</string>
     <string name="password_not_same">Password and password Again not same</string>
     <string name="empty_field">Please fill in all fields</string>
+    <string name="user_agreement">User Agreement</string>
+    <string name="no_user_agreement">Please confirm the user agreement</string>
+    <string name="a"><big><b>1.Parties</b></big> \n\n
+      <b>a)</b> Members who are members of the application\n
+      <b>b)</b> Aliwo application management \n\n
+
+        <big><b>2.Definitions</b></big> \n\n
+        &#160; &#160; &#160; &#160;<b>Users : </b> Real Persons who have become a member by using the user
+        agreement open to the applicationr\n
+         &#160; &#160; &#160; &#160;<b>Seller : </b> Natural or legal persons who approve and accept private seller
+        agreements and legal obligations and sell in-app products\n
+         &#160; &#160; &#160; &#160;<b>Legal Responsibilities : </b> Accepting the responsibilities for the breaches
+        and losses arising from the rules and norms of law and being responsible for the obligations  \n
+         &#160; &#160; &#160; &#160;<b>Aliwo Management : </b> Permanent owner of all managerial and design rights in the application
+        and representation of the Aliwo application board of directors and the Aliwo application\n\n
+
+        <big><b>3.Rights and Obligations of the Parties</b></big>\n\n
+        <b>3.1.</b> With the acceptance of the contract; Aliwo application confirms the accuracy of the information in the membership
+        section and in the section of filling in personal information after membership and the member is responsible for the problems
+        caused by the error of personal data..\n
+       <b>3.2.</b> The member is responsible for the membership account created, any password sharing and related problems and
+        responsibilities concern the member. \n
+        <b>3.3.</b> The right of operation and functioning of the user account belongs to the user, Aliwo administration has
+        the right to delete or freeze the account.\n
+        <b>3.4.</b> All responsibility in the product review section belongs to the user, Aliwo management is not responsible
+        for any legal issues.\n
+        <b>3.5.</b> Aliwo management is responsible for viruses or problems through the application, the user is responsible for
+        viruses and problems outside the Aliwo application.\n
+       <b>3.6.</b> Approval of this agreement declares that all individual clauses have been read and understood and that the
+        member is responsible for any liability.
+       </string>
 
     <!-- Login Activity -->
     <string name="with">With</string>

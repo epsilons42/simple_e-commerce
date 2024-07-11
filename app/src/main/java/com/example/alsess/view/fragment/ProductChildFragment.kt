@@ -1,4 +1,4 @@
-package com.example.alsess.view
+package com.example.alsess.view.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -9,12 +9,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.aaaaaa.ProductChildAdapter
 import com.example.aaaaaa.ProductParentAdapter
 import com.example.alsess.R
-import com.example.alsess.adapters.ProductCategoryAdapter
 import com.example.alsess.databinding.FragmentProductChildBinding
 import com.example.alsess.model.ProductRVParentModel
 import com.example.alsess.viewmodel.ProductChildViewModel

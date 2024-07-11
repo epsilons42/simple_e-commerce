@@ -39,6 +39,37 @@
     <string name="password_repeat">Şifre Tekrarı</string>
     <string name="password_not_same">Şifre ve şifre tekrarı aynı değil</string>
     <string name="empty_field">Lütfen boş alan bırakmayınız</string>
+    <string name="user_agreement">Kullanıcı Sözleşmesi</string>
+    <string name="no_user_agreement">Lütfen kullanıcı sözleşmesini onaylayın</string>
+    <string name="a" translatable="false"><big><b>1.Taraflar</b></big> \n\n
+      <b>a)</b> Uygulamaya Üye olan üyeler\n
+      <b>b)</b> Aliwo uygulama yönetimi \n\n
+
+        <big><b>2.Tanımlar</b></big> \n\n
+        &#160; &#160; &#160; &#160;<b>Kullanıcı : </b> Uygulamaya açık kullanıcı sözleşmesini kullanrak
+        üye olmuş Gerçek Kişilerdir\n
+         &#160; &#160; &#160; &#160;<b>Satıcı : </b> Özel satıcı sözleşmelerini ve hukuki yükümlülüklerini
+        onaylayıp kabul eden, uygulama içi ürünlerin satışını yapan gerçek veya tüzel kişiler\n
+         &#160; &#160; &#160; &#160;<b>Hukuki Sorumluluklar : </b> İbraz edilen hukuk kuralları ve normları
+        üzerinden gelen ihraz ve kayıpların sorumluluklarını kabul ederek yükümlülükler üzerinden sorumlu olma  \n
+         &#160; &#160; &#160; &#160;<b>Aliwo Yönetimi : </b> Uygulamadaki yönetsel ve tasarımsal bütün
+        hakların daimi sahibi ve Aliwo uygulaması yönetim kurulunun ve aliwo uygulamasını temsil edinimi\n\n
+
+        <big><b>3.Tarafların Hak ve Yükümlülükleri</b></big>\n\n
+        <b>3.1.</b> Sözleşmenin kabulu ile; Aliwo uygulaması üyelik kısmında ve üyelik sonrası kişisel bilgilerin doldurulması kısmında
+        bilgilerin doğruluğu onaylanır ve kişisel verilerin hatası sebepli sorunlardan üye sorumludur.\n
+       <b>3.2.</b> Oluşturulan üyelik hesabından üye sorumludur, herhangi bir şifre paylaşımı ve buna bağlı sorunlar ve
+        sorumluluklar üywyi ilgilendirir. \n
+        <b>3.3.</b> Kullanıcı hesabıyla ilgili işlem ve işlev hakkı kullanıcıya aittir, Aliwo yönetimi kullanıcı hesabıyla ilgili
+        hesap silme veya dondurma hakkına saiptir.\n
+        <b>3.4.</b> Ürün yorumlama kısmındaki tüm sorumluluk kullanıcıya aittir, herhangi bir hukiki sorundan Aliwo yönetimi
+        sorumlu değildir.\n
+        <b>3.5.</b> Uygulama üzerinden virüs veya sorunlardan Aliwo yönetimi sorumludur, Aliwo uygulaması hariç virüs ve
+        sorunlardan kullanıcı sorumludur.\n
+       <b>3.6.</b> Bu sözleşmenin onaylanması tek tek bütün maddelerin okunup anlandığı ve herhangi bir sorumluluktan
+        üyenin sorumlu olduğunu bildirir.
+       </string>
+
 
     <!-- Login Activity -->
     <string name="with">İle</string>

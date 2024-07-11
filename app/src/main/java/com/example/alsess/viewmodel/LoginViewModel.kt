@@ -46,7 +46,7 @@ class LoginViewModel : ViewModel() {
     fun resetPassword(email: String) {
         firebaseAuth = FirebaseAuth.getInstance()
         if (email != "") {
-            resetEmptyMLD.value = true
+            resetEmptyMLD.value = false
             firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     resetLinkMLD.value = true
@@ -55,7 +55,7 @@ class LoginViewModel : ViewModel() {
                 resetErrorMessageMLD.value = exception.localizedMessage
             }
         } else {
-            resetEmptyMLD.value = false
+            resetEmptyMLD.value = true
         }
     }
     fun request(context: Context) {
